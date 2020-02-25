@@ -1,0 +1,18 @@
+<h1>SHOW PAGE</h1>
+<hr>
+<hr>
+
+<h3><%= @task.title %></h3>
+<p><%= @task.details %></p>
+
+<% if @task.completed %>
+  <input type="checkbox" name="task[completed]" readonly="true" value="true" checked>
+  <label for="task[completed]">THIS TASK HAS BEEN COMPLETED</label>
+<% else %>
+  <input type="checkbox" name="task[completed]" readonly="true" disabled="true" value="false">
+  <label for="task[completed]">THIS TASK HAS NOT YET BEEN COMPLETED</label>
+<% end %>
+<br><br>
+<%= link_to 'EDIT THIS TASK', edit_task_path %>
+<br><br>
+<%= link_to 'TAKE ME HOME', tasks_path %>

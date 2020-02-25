@@ -1,0 +1,24 @@
+<div class="form">
+  <%= form_for item do |f| %>
+  <div class="form-title">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="form-details">
+    <%= f.label :details %>
+    <%= f.text_field :details %>
+  </div>
+
+  <div class="form-completed">
+    <% if !params[:id].nil? %>
+      <%= f.check_box :completed %>
+      <%= f.label 'COMPLETED?' %>
+    <% end %>
+  </div>
+
+  <div class="form-submit">
+    <%= f.button %>
+  </div>
+  <% end %>
+</div>

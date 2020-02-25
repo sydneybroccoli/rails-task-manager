@@ -1,3 +1,46 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.task-container {
+  display: grid;
+  grid-template-columns: 10% auto auto 10%;
+  // justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+}
+.task-item {
+  grid-column: 2 / 3;
+  padding: 10px;
+  width: 500px;
+  margin: 10px;
+}
+.task-delete {
+  grid-column: 3 / 4;
+  padding: 10px;
+  margin: 10px;
+  justify-self: end;
+}
+
+.link-container {
+  text-align: center;
+}
+
+.link-container a {
+  text-decoration: none;
+  background-color: #e5ccc9;
+  color: black;
+  padding: 10px;
+  margin: 10px;
+  border: 3px solid transparent;
+  &:hover {
+    border: 3px solid black;
+  }
+}
+
+// FORM
+.form {}
+.form-title {}
+.form-details {}
+.form-completed {}

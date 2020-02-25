@@ -1,0 +1,26 @@
+<h1>INDEX PAGE</h1>
+<hr>
+<hr>
+<% @tasks.each do |task| %>
+  <div class="task-container">
+    <div class="task-item">
+      <% if task.completed %>
+        <input type="checkbox" name="task[completed]" readonly="true" value="true" checked>
+        <label for="task[completed]"><%= link_to task.title, task_path(task.id) %></label>
+      <% else %>
+        <input type="checkbox" name="task[completed]" readonly="true" value="false">
+        <label for="task[completed]"><%= link_to task.title, task_path(task.id) %></label>
+      <% end %>
+    </div>
+
+    <div class="task-delete">
+      <%= link_to 'DELETE?', task_path(task.id), method: :delete, data: { confirm: 'ARE YOU SURE?' } %>
+    </div>
+  </div>
+<% end %>
+
+<br><br>
+<div class="link-container">
+  <%= link_to 'CREATE A NEW TASK', new_task_path %>
+</div>
+
